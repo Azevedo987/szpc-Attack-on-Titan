@@ -1,0 +1,118 @@
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main::after {
+    content: '';
+    position: fixed;
+    top:0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.9) 90%);
+    z-index: -1;
+}
+
+.conteudo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.informacoes .logo {
+    width: 450px;
+    margin-bottom: 20px;
+}
+
+.informacoes p {
+    max-width: 50%;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+    margin-left: 10px;
+    text-shadow: 3px 3px 2px black;
+}
+
+.botoes-carrossel {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.botao {
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.botao.selecionado {
+    background-color: red;
+    border: 2px solid #ffffff;
+}
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    min-height: 100vh;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-lateral .icone {
+    width: 40px;
+    transition: 0.3s ease-in-out;
+    filter: invert(1);
+}
+
+.menu-lateral .icone:hover {
+    transform: scale(1.2);
+}
+
+.carrossel {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.carrossel .imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: trocarImagem 0.7s;
+}
+
+.carrossel .imagem.ativa {
+    display: block;
+    
+}
+
+@keyframes trocarImagem {
+    from{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 1;
+    }
+}
